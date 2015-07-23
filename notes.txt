@@ -1,0 +1,111 @@
+Exercise 43: Basic Object-Oriented Analysis and Design
+
+Simple Game Engine
+
+Mouse Game
+
+Must reach 'kitchen' for cheese, 'finish game'
+
+* Map
+* Engine
+* Rooms
+
+Room Plans:
+- Mouse Hole
+	- (Start) -> Hallway 1
+	- Turn Around -> Death: Starvation
+- Hallway 1
+	- From Mouse Hole:
+		- Right -> Hallway 2
+		- Left -> Stairs
+		- Striaght -> Wall
+		- Turn Around -> Mouse Hole
+	- From Stairs
+		- Right -> Mouse Hole
+		- Left -> Wall
+		- Straight -> Hallway 2
+		- Turn Around -> Stairs
+	- From Hallway 2
+		- Right -> Wall
+		- Left -> Mouse Hole
+		- Straight -> Hallway 1
+		- Turn Around -> Stairs
+- Hallway 2
+	- From Hallway 1
+		- Right -> Livingroom
+		- Left -> Kitchen
+		- Straight -> Dead End
+		- Turn Around -> Hallway 1
+	- From Livingroom
+		- Right -> Dead End
+		- Left -> Hallway 1
+		- Straight -> Kitchen
+		- Turn Around -> Livingroom		
+	- From Dead End
+		- Right -> Kitchen
+		- Left -> Livingroom
+		- Straight -> Hallway 1
+		- Turn Around -> Dead End	
+- Dead End
+	- Right -> Wall
+	- Left -> Wall
+	- Straight -> Door
+	- Turn Around -> Hallway 2
+- Door -> Death: Stepped on
+- Livingroom
+	- Turn Back -> Hallway 2
+	- Explore -> Death: Eaten by Cat
+- Stairs
+	- Up the stairs? Top of Stairs
+	- Down the stairs? Hallway 1
+- Top of Stairs
+	- From Stairs
+		- Right -> Hallway 3
+		- Left -> Wall
+		- Straight -> Little Girl's Bedroom
+		- Turn Around -> Stairs
+	- From Little Girl's Bedroom
+		- Right -> Wall
+		- Left -> Hallway 3
+		- Straight -> Stairs
+		- Turn Around -> Little Girl's Bedroom
+	- From Hallway 3
+		- Right -> Little Girl's Bedroom
+		- Left -> Stairs
+		- Straight -> Wall
+		- Turn Around -> Hallway 3
+- Hallway 3
+	- From Stairs
+		- Right -> Banister
+		- Left -> Bathroom
+		- Straight -> Master Bedroom
+		- Turn Around -> Stairs
+	- From Bathroom
+		- Right -> Top of Stairs
+		- Left -> Master Bedroom
+		- Straight -> Banister
+		- Turn Around -> Bathroom
+	- From Master Bedroom
+		- Right -> Bathroom
+		- Left -> Banister
+		- Straight -> Hallway 3
+		- Turn Around -> Master Bedroom
+- Banister -> Death: Accidental suicide
+- Bathroom
+	- Turn Around -> Hallway 3
+	- Explore -> Death: Falls in toilet and drowns
+- Little Girl's Bedroom
+	- Turn Around -> Stairs
+	- Explore -> Captured!
+		- Battle with Hamster!
+			- Wins -> Escapes -> Stairs
+			- Loses -> Death: Hamster
+- Master Bedroom
+	- Turn Around -> Hallway 3
+	- Explore -> Death: Discovered! Gets impaled by a stiletto
+- Kitchen
+	- Turn Around -> Hallway 2
+	- Explore -> Inner Kitchen
+- Inner Kitchen
+	- Floor -> Death: Mouse Trap
+	- Counter -> WIN! Finish Game
